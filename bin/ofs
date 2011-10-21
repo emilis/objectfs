@@ -71,8 +71,11 @@ do
     # symlinked commands below that define their own options
     -R*)
         ringo_args=("${ringo_args[@]}" "${1:2}") ;;
-    -d|-e|-i|-o|-V)
+    -d|-e|-o|-V)
         ringo_args=("${ringo_args[@]}" "$1") ;;
+    -i)
+        ringo_args=("${ringo_args[@]}" "$1");
+        app_args=("${app_args[@]}" "$1") ;;
      # Other opts go to Ringo or whatever the command is
      -*)
         app_args=("${app_args[@]}" "$1") ;;

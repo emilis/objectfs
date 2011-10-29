@@ -1,2 +1,3 @@
 *.swp
 /packages/
+config/uri_map.csv

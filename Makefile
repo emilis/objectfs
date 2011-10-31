@@ -12,6 +12,9 @@ REPO_PKG := packages/objectfs-packages
 build: install_packages
 
 
+clean: remove_packages
+
+
 zip: build | create_zip
 
 
@@ -20,23 +23,22 @@ zip: build | create_zip
 install_packages: | $(CORE_PKG) $(REPO_PKG)
 
 
-create_directories: | $(PACKAGE_DIR)
+# --- Tasks: -----------------------------------------------------------------
+
+remove_packages:
+	rm -rf $(PACKAGE_DIR)
 
 
-create_zip: build
+create_zip: install_packages
 	tar czf ../objectfs.tar.gz --exclude-vcs ../objectfs
 
 
-# --- Tasks: -----------------------------------------------------------------
-
-$(CORE_PKG): | create_directories
-	cd $(PACKAGE_DIR)
-	git clone git://github.com/emilis/objectfs-core.git
+$(CORE_PKG): | $(PACKAGE_DIR)
+	git clone git://github.com/emilis/objectfs-core.git $(CORE_PKG)
 
 
-$(REPO_PKG): | create_directories
-	cd $(PACKAGE_DIR)
-	git clone git://github.com/emilis/objectfs-packages.git
+$(REPO_PKG): | $(PACKAGE_DIR)
+	git clone git://github.com/emilis/objectfs-packages.git $(REPO_PKG)
 
 
 $(PACKAGE_DIR):

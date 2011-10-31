@@ -6,6 +6,8 @@ PACKAGE_DIR := packages
 CORE_PKG := packages/objectfs-core
 REPO_PKG := packages/objectfs-packages
 
+DATE := `date +%F`
+
 
 # --- Main targets: ----------------------------------------------------------
 
@@ -30,7 +32,7 @@ remove_packages:
 
 
 create_zip: install_packages
-	tar czf ../objectfs.tar.gz --exclude-vcs ../objectfs
+	tar czf ../objectfs-$(DATE).tar.gz --exclude-vcs ../objectfs
 
 
 $(CORE_PKG): | $(PACKAGE_DIR)

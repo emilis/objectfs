@@ -11,6 +11,8 @@ DATE := `date +%F`
 
 # --- Main targets: ----------------------------------------------------------
 
+default: build
+
 build: install_packages
 
 

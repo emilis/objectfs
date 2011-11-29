@@ -36,7 +36,7 @@ $ bin/ofs iterate test.csv
 
 This package provides two command-line scripts: `ofs` and `ofs-pkg`.
 
-#### ofs
+#### ofs \[OPTION\] \[COMMAND\]
 
 Reads and manipulates data.
 
@@ -51,15 +51,18 @@ Reads and manipulates data.
 ##### Commands
 
 <table><tbody>
-<tr><td><b>read STORAGE ID</b></td><td>Reads one record from storage.</td></tr>
-<tr><td><b>iterate STORAGE</b></td><td>Prints all records in JSON format. One record per line.</td></tr>
-<tr><td><b>list STORAGE</b></td><td>Prints all records as a single JSON array.</td></tr>
-<tr><td><b>write STORAGE JSON<br>write STORAGE ID JSON</b></td><td>Writes one JSON record to storage.<br>Provide a record ID if you want to update an existing record.</td></tr>
-<tr><td><b>remove STORAGE ID</b></td><td>Removes one JSON record from storage.</td></tr>
-<tr><td><b>mirror STORAGE1 STORAGE2</b></td><td>Copy all records from one storage to another.</td></tr>
+<tr><td><b>read</b> <i>STORAGE ID</i></td><td>Reads one record from storage.</td></tr>
+<tr><td><b>iterate</b> <em>STORAGE</em></td><td>Prints all records in JSON format. One record per line.</td></tr>
+<tr><td><b>list</b> <i>STORAGE</i></td><td>Prints all records as a single JSON array.</td></tr>
+<tr><td><b>write</b> <i>STORAGE JSON</i><br>
+        <b>write</b> <i>STORAGE ID JSON</i></td>
+    <td>Writes one JSON record to storage.<br>
+        Provide a record ID if you want to update an existing record.</td></tr>
+<tr><td><b>remove</b> <i>STORAGE ID</i></td><td>Removes one JSON record from storage.</td></tr>
+<tr><td><b>mirror</b> <i>STORAGE1 STORAGE2</i></td><td>Copy all records from one storage to another.</td></tr>
 </tbody></table>
 
-#### ofs-pkg
+#### ofs-pkg \[OPTION\] \[COMMAND\]
 
 Manages ObjectFS packages.
 
@@ -74,12 +77,21 @@ Manages ObjectFS packages.
 ##### Commands
 
 <table><tbody>
-<tr><td><b>search<br>search PATTERN</b></td><td>Shows a package list.<br>Filters the package list.</td></tr>
-<tr><td><b>show PACKAGE</b></td><td>Shows package information in JSON format.</td></tr>
-<tr><td><b>install PACKAGE</b></td><td>Installs package.</td></tr>
-<tr><td><b>remove PACKAGE</b></td><td>Removes a package.</td></tr>
-<tr><td><b>update<br>update PACKAGE</b></td><td>Downloads package updates,<br>or a specific package update.</td></tr>
-<tr><td><b>upgrade<br>upgrade PACKAGE</b></td><td>Downloads package updates and upgrades packages,<br>or a specific package.</td></tr>
+<tr><td><b>search</b><br>
+        <b>search</b> <i>PATTERN</i></td>
+    <td>Shows a package list.<br>
+        Filters the package list.</td></tr>
+<tr><td><b>show</b> <i>PACKAGE</i></td><td>Shows package information in JSON format.</td></tr>
+<tr><td><b>install</b> <i>PACKAGE</i></td><td>Installs package.</td></tr>
+<tr><td><b>remove</b> <i>PACKAGE</i></td><td>Removes a package.</td></tr>
+<tr><td><b>update</b><br>
+        <b>update</b> <i>PACKAGE</i></td>
+    <td>Downloads package updates,<br>
+        or a specific package update.</td></tr>
+<tr><td><b>upgrade</b><br>
+        <b>upgrade</b> <i>PACKAGE</i></td>
+    <td>Downloads package updates and upgrades packages,<br>
+        or a specific package.</td></tr>
 </tbody></table>
 
 

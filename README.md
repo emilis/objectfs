@@ -54,7 +54,7 @@ Reads and manipulates data.
 <tr><td><b>read STORAGE ID</b></td><td>Reads one record from storage.</td></tr>
 <tr><td><b>iterate STORAGE</b></td><td>Prints all records in JSON format. One record per line.</td></tr>
 <tr><td><b>list STORAGE</b></td><td>Prints all records as a single JSON array.</td></tr>
-<tr><td><b>write STORAGE JSON<br>write FS ID JSON</b></td><td>Writes one JSON record to storage.<br>Provide a record ID if you want to update an existing record.</td></tr>
+<tr><td><b>write STORAGE JSON<br>write STORAGE ID JSON</b></td><td>Writes one JSON record to storage.<br>Provide a record ID if you want to update an existing record.</td></tr>
 <tr><td><b>remove STORAGE ID</b></td><td>Removes one JSON record from storage.</td></tr>
 <tr><td><b>mirror STORAGE1 STORAGE2</b></td><td>Copy all records from one storage to another.</td></tr>
 </tbody></table>

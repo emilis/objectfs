@@ -5,6 +5,7 @@ PACKAGE_DIR := packages
 
 CORE_PKG := packages/objectfs-core
 REPO_PKG := packages/objectfs-packages
+FEED_PKG := packages/ofs-feeds
 
 DATE := `date +%F`
 
@@ -24,7 +25,7 @@ zip: build | create_zip
 
 # --- Subroutines: -----------------------------------------------------------
 
-install_packages: | $(CORE_PKG) $(REPO_PKG)
+install_packages: | $(CORE_PKG) $(REPO_PKG) $(FEED_PKG)
 
 
 # --- Tasks: -----------------------------------------------------------------
@@ -43,6 +44,9 @@ $(CORE_PKG): | $(PACKAGE_DIR)
 
 $(REPO_PKG): | $(PACKAGE_DIR)
 	git clone git://github.com/emilis/objectfs-packages.git $(REPO_PKG)
+
+$(FEED_PKG): | $(PACKAGE_DIR)
+	git clone git://github.com/emilis/ofs-feeds.git $(FEED_PKG)
 
 
 $(PACKAGE_DIR):
